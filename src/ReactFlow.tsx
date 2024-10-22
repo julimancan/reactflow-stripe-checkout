@@ -3,7 +3,6 @@ import { Background, Controls, ReactFlow, useEdgesState, useNodesState } from '@
 import '@xyflow/react/dist/style.css';
 import { useMemo } from 'react';
 import { ColoredVerticalLine, RegularNode, TitleNode } from './Nodes';
-import { RegularEdge } from './Edges';
 import { edges as initialEdges, nodes as initialNodes } from './data';
 
 export default function ReactFlowComp() {
@@ -16,9 +15,6 @@ export default function ReactFlowComp() {
     regularNode: RegularNode
   }), []);
 
-  const edgeTypes = useMemo(() => ({
-    regularEdge: RegularEdge,
-  }), []);
 
   return (
     <div className='w-full h-[600px] max-w-[827px] border border-[rgb(65, 69, 82)]  '>
@@ -28,7 +24,6 @@ export default function ReactFlowComp() {
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
         nodeTypes={nodeTypes}
-        edgeTypes={edgeTypes}
       >
         <Controls />
         <Background
