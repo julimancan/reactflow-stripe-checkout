@@ -1,15 +1,4 @@
-import { BaseEdge, EdgeProps, getStraightPath, MarkerType, EdgeMarkerType } from '@xyflow/react';
-
-export default function CustomEdge({ id, sourceX, sourceY, targetX, targetY }: EdgeProps) {
-  const [edgePath] = getStraightPath({
-    sourceX,
-    sourceY,
-    targetX,
-    targetY,
-  });
-
-  return <BaseEdge id={id} path={edgePath} />;
-}
+import { BaseEdge, EdgeProps, getStraightPath } from '@xyflow/react';
 
 export const RegularEdge = ({ id, sourceX, sourceY, targetX, targetY, ...props }: EdgeProps) => {
   // console.log({ })
@@ -26,28 +15,5 @@ export const RegularEdge = ({ id, sourceX, sourceY, targetX, targetY, ...props }
 
     <BaseEdge id={id} path={edgePath} {...props} />
     // </div>
-  );
-};
-
-
-export const ArrowEdge = ({ id, sourceX, sourceY, targetX, targetY, markerEnd }: EdgeProps) => {
-  const [edgePath] = getStraightPath({
-    sourceX,
-    sourceY,
-    targetX,
-    targetY,
-  });
-
-  return (
-    <>
-      <BaseEdge
-        id={id}
-        path={edgePath}
-        markerEnd={markerEnd}
-
-        style={{ stroke: "blue" }}
-      />
-      {"here"}
-    </>
   );
 };

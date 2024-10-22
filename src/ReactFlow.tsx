@@ -3,27 +3,23 @@ import { Background, Controls, ReactFlow, useEdgesState, useNodesState } from '@
 import '@xyflow/react/dist/style.css';
 import { useMemo } from 'react';
 import { ColoredVerticalLine, RegularNode, TitleNode } from './Nodes';
-import CustomEdge, { ArrowEdge, RegularEdge } from './Edges';
-import { initialEdges, initialNodes } from './data';
-
-
-
-
+import { RegularEdge } from './Edges';
+import { edges as initialEdges, nodes as initialNodes } from './data';
 
 export default function ReactFlowComp() {
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
-  const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [edges, , onEdgesChange] = useEdgesState(initialEdges);
+
   const nodeTypes = useMemo(() => ({
     title: TitleNode,
     coloredVerticalLine: ColoredVerticalLine,
     regularNode: RegularNode
   }), []);
-  const edgeTypes = {
-    'custom-edge': CustomEdge,
+
+  const edgeTypes = useMemo(() => ({
     regularEdge: RegularEdge,
-    arrowEdge: ArrowEdge
-  };
-  // nodes
+  }), []);
+
   return (
     <div className='w-full h-[600px] max-w-[827px] border border-[rgb(65, 69, 82)]  '>
       <ReactFlow
@@ -31,13 +27,12 @@ export default function ReactFlowComp() {
         edges={edges}
         onNodesChange={onNodesChange}
         onEdgesChange={onEdgesChange}
-        className='relative'
         nodeTypes={nodeTypes}
         edgeTypes={edgeTypes}
       >
         <Controls />
         <Background
-          // @ts-ignore
+          // @ts-expect-error - the type definitions are incorrect
           variant={"dots"}
           gap={12}
           size={1}

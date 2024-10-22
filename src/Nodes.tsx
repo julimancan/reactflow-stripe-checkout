@@ -39,7 +39,6 @@ export const ColoredVerticalLine = ({ data, id }: NodeProps) => {
         type="source"
         position={Position.Left}
         id="left"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -52,7 +51,6 @@ export const ColoredVerticalLine = ({ data, id }: NodeProps) => {
         type="target"
         position={Position.Left}
         id="left"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -65,7 +63,6 @@ export const ColoredVerticalLine = ({ data, id }: NodeProps) => {
         type="source"
         position={Position.Right}
         id="right"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -78,7 +75,6 @@ export const ColoredVerticalLine = ({ data, id }: NodeProps) => {
         type="target"
         position={Position.Right}
         id="right"
-      // className="hidden"
       />
       <div className={`w-[4px] rounded-[4px]`} style={{ background: color, height }} />
       <Handle
@@ -92,7 +88,6 @@ export const ColoredVerticalLine = ({ data, id }: NodeProps) => {
         type="source"
         position={Position.Bottom}
         id="bottom"
-      // className="hidden"
       />
     </div>
   );
@@ -115,7 +110,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="target"
         position={Position.Top}
         id="top"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -128,7 +122,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="source"
         position={Position.Left}
         id="left"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -141,7 +134,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="target"
         position={Position.Left}
         id="left"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -154,7 +146,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="source"
         position={Position.Right}
         id="right"
-      // className="hidden"
       />
       <Handle
         style={{
@@ -167,7 +158,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="target"
         position={Position.Right}
         id="right"
-      // className="hidden"
       />
       <div style={{
         color: "rgb(60, 66, 87)",
@@ -191,7 +181,6 @@ export const RegularNode = ({ data }: NodeProps) => {
         type="source"
         position={Position.Bottom}
         id="bottom"
-      // className="hidden"
       />
     </div>
   );

@@ -1,6 +1,6 @@
 import { Edge, MarkerType, Node } from "@xyflow/react";
 
-export const initialNodes: Node[] = [
+export const nodes: Node[] = [
   {
     id: "title",
     position: {
@@ -206,7 +206,7 @@ export const initialNodes: Node[] = [
   
 ];
 
-export const initialEdges: Edge[] = [
+export const edges: Edge[] = [
   {
     id: "1-2",
     source: "1",
